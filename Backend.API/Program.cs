@@ -1,5 +1,8 @@
 using Backend.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
+using Backend.Domain.Interfaces;
+using Backend.Infrastructure.Repositories;
+using Backend.Application.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +22,10 @@ builder.Services.AddDbContext<AppDbContext>(options =>
         ServerVersion.AutoDetect(connectionString)
     );
 });
+// Injección de dependencia para el repositorio de contatos
+builder.Services.AddScoped<IContactoRepository, ContactoRepository>();
+// Inyección de dependencia para el servicio de contactos
+builder.Services.AddScoped<ContactoService>();
 
 var app = builder.Build();
 

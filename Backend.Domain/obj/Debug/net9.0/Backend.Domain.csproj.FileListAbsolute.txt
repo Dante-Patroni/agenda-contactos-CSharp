@@ -1,12 +1,14 @@
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\bin\Debug\net9.0\Backend.Domain.deps.json
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\bin\Debug\net9.0\Backend.Domain.dll
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\bin\Debug\net9.0\Backend.Domain.pdb
+D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\bin\Debug\net9.0\Backend.Domain.xml
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.AssemblyInfoInputs.cache
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.AssemblyInfo.cs
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.csproj.CoreCompileInputs.cache
+D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.sourcelink.json
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.dll
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\refint\Backend.Domain.dll
+D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.xml
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.pdb
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\ref\Backend.Domain.dll
-D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.sourcelink.json

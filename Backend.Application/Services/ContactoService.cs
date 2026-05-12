@@ -25,7 +25,7 @@ public class ContactoService
     /// <summary>
     /// Obtiene todos los contactos y los transforma en una lista de DTOs de respuesta.
     /// </summary>
-    /// <returns>Lista de objetos <see cref="ContactoResponseDto"/>.</returns>
+    /// <returns>Una lista de objetos <see cref="ContactoResponseDto"/>.</returns>
     public async Task<List<ContactoResponseDto>> ObtenerTodosAsync()
     {
         var contactos = await _contactoRepository.ObtenerTodosAsync();
@@ -93,5 +93,55 @@ public class ContactoService
             Telefono = contactoCreado.Telefono,
             Email = contactoCreado.Email
         };
+    }
+
+    /// <summary>
+    /// Gestiona la actualización de los datos de un contacto existente.
+    /// </summary>
+    /// <param name="id">Identificador único del contacto a modificar.</param>
+    /// <param name="dto">DTO con los nuevos datos actualizados.</param>
+    /// <returns>
+    /// Un <see cref="ContactoResponseDto"/> con los datos actualizados si el contacto existía; 
+    /// de lo contrario, null.
+    /// </returns>
+    public async Task<ContactoResponseDto?> EditarAsync(int id, CrearContactoDto dto)
+    {
+        // Transformación de los datos del DTO a la entidad de dominio
+        var contacto = new Contacto
+        {
+            Nombre = dto.Nombre,
+            Telefono = dto.Telefono,
+            Email = dto.Email
+        };
+
+        var contactoEditado = await _contactoRepository.EditarAsync(id, contacto);
+
+        if (contactoEditado is null)
+        {
+            return null;
+        }
+
+        // Retorna el resultado mapeado nuevamente a DTO de respuesta
+        return new ContactoResponseDto
+        {
+            Id = contactoEditado.Id,
+            Nombre = contactoEditado.Nombre,
+            Telefono = contactoEditado.Telefono,
+            Email = contactoEditado.Email
+        };
+    }
+
+    /// <summary>
+    /// Procesa la eliminación de un contacto del sistema.
+    /// </summary>
+    /// <param name="id">El identificador único del contacto a eliminar.</param>
+    /// <returns>
+    /// true si el contacto se eliminó correctamente; 
+    /// de lo contrario, false si el contacto no fue encontrado.
+    /// </returns>
+    public async Task<bool> EliminarAsync(int id)
+    {
+        // Delega la responsabilidad de la eliminación física a la capa de infraestructura (Repositorio)
+        return await _contactoRepository.EliminarAsync(id);
     }
 }

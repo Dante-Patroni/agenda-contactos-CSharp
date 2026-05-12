@@ -6,8 +6,7 @@ namespace Backend.API.Controllers;
 
 /// <summary>
 /// Controlador para la gestión de contactos.
-/// Proporciona endpoints para consultar y crear contactos mediante la lógica definida en ContactoService.
-/// La ruta base es: /api/contactos
+/// Proporciona endpoints para CRUD de contactos mediante la lógica definida en ContactoService.
 /// </summary>
 [ApiController]
 [Route("api/[controller]")]
@@ -26,28 +25,20 @@ public class ContactosController : ControllerBase
 
     /// <summary>
     /// Recupera la lista de todos los contactos registrados.
-    /// Método HTTP: GET /api/contactos
     /// </summary>
-    /// <returns>
-    /// Una lista de objetos <see cref="ContactoResponseDto"/> con estado 200 OK.
-    /// </returns>
+    /// <returns>Una lista de objetos <see cref="ContactoResponseDto"/>.</returns>
     [HttpGet]
     public async Task<ActionResult<List<ContactoResponseDto>>> ObtenerTodos()
     {
         var contactos = await _contactoService.ObtenerTodosAsync();
-
         return Ok(contactos);
     }
 
     /// <summary>
     /// Recupera un contacto específico mediante su identificador único.
-    /// Método HTTP: GET /api/contactos/{id}
     /// </summary>
     /// <param name="id">ID numérico del contacto a buscar.</param>
-    /// <returns>
-    /// 200 OK si el contacto existe.
-    /// 404 Not Found si el identificador no corresponde a ningún registro.
-    /// </returns>
+    /// <returns>El contacto solicitado o un error 404 si no existe.</returns>
     [HttpGet("{id}")]
     public async Task<ActionResult<ContactoResponseDto>> ObtenerPorId(int id)
     {
@@ -62,24 +53,62 @@ public class ContactosController : ControllerBase
     }
 
     /// <summary>
-    /// Crea un nuevo registro de contacto en el sistema.
-    /// Método HTTP: POST /api/contactos
+    /// Crea un nuevo registro de contacto.
     /// </summary>
-    /// <param name="dto">Objeto con los datos del nuevo contacto (Nombre, Teléfono, Email).</param>
-    /// <returns>
-    /// 201 Created con el objeto creado.
-    /// Incluye el header 'Location' con la URL para consultar el nuevo recurso.
-    /// </returns>
+    /// <param name="dto">Datos del contacto a crear.</param>
+    /// <returns>El contacto recién creado y la ubicación del recurso.</returns>
     [HttpPost]
     public async Task<ActionResult<ContactoResponseDto>> Crear(CrearContactoDto dto)
     {
         var contactoCreado = await _contactoService.CrearAsync(dto);
 
-        // Genera una respuesta 201 y apunta al método ObtenerPorId para localizar el recurso
         return CreatedAtAction(
             nameof(ObtenerPorId),
             new { id = contactoCreado.Id },
             contactoCreado
         );
+    }
+
+    /// <summary>
+    /// Actualiza un contacto existente identificado por su ID.
+    /// </summary>
+    /// <param name="id">ID del contacto a modificar.</param>
+    /// <param name="dto">Nuevos datos para el contacto.</param>
+    /// <returns>
+    /// 200 OK con los datos actualizados si tiene éxito.
+    /// 404 Not Found si el ID no corresponde a ningún contacto.
+    /// </returns>
+    [HttpPut("{id}")]
+    public async Task<ActionResult<ContactoResponseDto>> Editar(int id, CrearContactoDto dto)
+    {
+        var contactoEditado = await _contactoService.EditarAsync(id, dto);
+
+        if (contactoEditado is null)
+        {
+            return NotFound();
+        }
+
+        return Ok(contactoEditado);
+    }
+
+    /// <summary>
+    /// Elimina un contacto de forma permanente.
+    /// </summary>
+    /// <param name="id">ID del contacto a eliminar.</param>
+    /// <returns>
+    /// 204 No Content si se eliminó correctamente.
+    /// 404 Not Found si el contacto no fue encontrado.
+    /// </returns>
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> Eliminar(int id)
+    {
+        var eliminado = await _contactoService.EliminarAsync(id);
+
+        if (!eliminado)
+        {
+            return NotFound();
+        }
+
+        return NoContent();
     }
 }

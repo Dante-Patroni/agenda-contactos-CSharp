@@ -89,4 +89,29 @@ public class ContactoRepository : IContactoRepository
 
         return contactoExistente;
     }
+    /// <summary>
+    /// Solicita la eliminación de un contacto al repositorio.
+    /// </summary>
+    /// <param name="id">Identificador único del contacto que se desea eliminar.</param>
+    /// <returns>
+    /// Una tarea que contiene true si el contacto fue eliminado exitosamente; 
+    /// de lo contrario, false si el contacto no existía.
+    /// </returns>
+    public async Task<bool> EliminarAsync(int id)
+    {
+        var contacto =
+            // Llama al método correspondiente en la capa de persistencia (Repositorio)
+            await _context.Contactos.FindAsync(id);
+
+        if (contacto is null)
+        {
+            return false;
+        }
+
+        _context.Contactos.Remove(contacto);
+
+        await _context.SaveChangesAsync();
+
+        return true;
+    }
 }

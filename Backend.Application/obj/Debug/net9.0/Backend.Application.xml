@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Backend.Application</name>
+    </assembly>
+    <members>
+        <member name="T:Backend.Application.DTOs.ContactoResponseDto">
+            <summary>
+            Objeto de Transferencia de Datos (DTO) para la respuesta de contactos.
+            Se utiliza para enviar información desde la API hacia el cliente de forma segura.
+            Incluye el identificador único generado por el sistema.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.ContactoResponseDto.Id">
+            <summary>
+            Identificador único del contacto en la base de datos.
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Backend.Application.DTOs.ContactoResponseDto.Nombre">
+            <summary>
+            Nombre completo o alias del contacto.
+            </summary>
+            <example>Juan Pérez</example>
+        </member>
+        <member name="P:Backend.Application.DTOs.ContactoResponseDto.Telefono">
+            <summary>
+            Número de teléfono registrado para el contacto.
+            </summary>
+            <example>+34 600 000 000</example>
+        </member>
+        <member name="P:Backend.Application.DTOs.ContactoResponseDto.Email">
+            <summary>
+            Dirección de correo electrónico del contacto.
+            </summary>
+            <example>juan.perez@ejemplo.com</example>
+        </member>
+        <member name="T:Backend.Application.DTOs.CrearContactoDto">
+            <summary>
+            Objeto de Transferencia de Datos (DTO) para la creación de un nuevo contacto.
+            Define la estructura de datos que el cliente debe enviar al sistema.
+            A diferencia de la entidad de dominio, este DTO no incluye un ID.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.CrearContactoDto.Nombre">
+            <summary>
+            Nombre completo o alias del contacto.
+            </summary>
+            <example>Juan Pérez</example>
+        </member>
+        <member name="P:Backend.Application.DTOs.CrearContactoDto.Telefono">
+            <summary>
+            Número de teléfono de contacto.
+            </summary>
+            <example>+34 600 000 000</example>
+        </member>
+        <member name="P:Backend.Application.DTOs.CrearContactoDto.Email">
+            <summary>
+            Dirección de correo electrónico del contacto.
+            </summary>
+            <example>juan.perez@ejemplo.com</example>
+        </member>
+        <member name="T:Backend.Application.Services.ContactoService">
+            <summary>
+            Servicio de aplicación para la gestión de contactos.
+            Contiene la lógica de negocio y se encarga de la transformación entre 
+            entidades de dominio y objetos de transferencia de datos (DTOs).
+            </summary>
+        </member>
+        <member name="M:Backend.Application.Services.ContactoService.#ctor(Backend.Domain.Interfaces.IContactoRepository)">
+            <summary>
+            Constructor que inyecta la abstracción del repositorio de contactos.
+            </summary>
+            <param name="contactoRepository">Instancia del repositorio (IContactoRepository).</param>
+        </member>
+        <member name="M:Backend.Application.Services.ContactoService.ObtenerTodosAsync">
+            <summary>
+            Obtiene todos los contactos y los transforma en una lista de DTOs de respuesta.
+            </summary>
+            <returns>Una lista de objetos <see cref="T:Backend.Application.DTOs.ContactoResponseDto"/>.</returns>
+        </member>
+        <member name="M:Backend.Application.Services.ContactoService.ObtenerPorIdAsync(System.Int32)">
+            <summary>
+            Busca un contacto por ID y lo devuelve mapeado a un DTO si existe.
+            </summary>
+            <param name="id">Identificador único del contacto.</param>
+            <returns>
+            Un <see cref="T:Backend.Application.DTOs.ContactoResponseDto"/> si el contacto se encuentra; 
+            de lo contrario, null.
+            </returns>
+        </member>
+        <member name="M:Backend.Application.Services.ContactoService.CrearAsync(Backend.Application.DTOs.CrearContactoDto)">
+            <summary>
+            Procesa la creación de un nuevo contacto.
+            Transforma el DTO de entrada en una entidad, la persiste y devuelve el DTO de respuesta.
+            </summary>
+            <param name="dto">DTO con los datos para crear el contacto.</param>
+            <returns>El nuevo contacto creado representado como <see cref="T:Backend.Application.DTOs.ContactoResponseDto"/>.</returns>
+        </member>
+        <member name="M:Backend.Application.Services.ContactoService.EditarAsync(System.Int32,Backend.Application.DTOs.CrearContactoDto)">
+            <summary>
+            Gestiona la actualización de los datos de un contacto existente.
+            </summary>
+            <param name="id">Identificador único del contacto a modificar.</param>
+            <param name="dto">DTO con los nuevos datos actualizados.</param>
+            <returns>
+            Un <see cref="T:Backend.Application.DTOs.ContactoResponseDto"/> con los datos actualizados si el contacto existía; 
+            de lo contrario, null.
+            </returns>
+        </member>
+        <member name="M:Backend.Application.Services.ContactoService.EliminarAsync(System.Int32)">
+            <summary>
+            Procesa la eliminación de un contacto del sistema.
+            </summary>
+            <param name="id">El identificador único del contacto a eliminar.</param>
+            <returns>
+            true si el contacto se eliminó correctamente; 
+            de lo contrario, false si el contacto no fue encontrado.
+            </returns>
+        </member>
+    </members>
+</doc>

@@ -137,3 +137,4 @@ D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Da
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.API\obj\Debug\net9.0\Backend.API.sourcelink.json

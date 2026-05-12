@@ -9,3 +9,4 @@ D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Da
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\refint\Backend.Domain.dll
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.pdb
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\ref\Backend.Domain.dll
+D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Domain\obj\Debug\net9.0\Backend.Domain.sourcelink.json

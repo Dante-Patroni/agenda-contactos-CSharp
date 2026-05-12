@@ -15,3 +15,4 @@ D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Da
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Infrastructure\obj\Debug\net9.0\Backend.Infrastructure.pdb
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Infrastructure\obj\Debug\net9.0\Backend.Infrastructure.genruntimeconfig.cache
 D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Infrastructure\obj\Debug\net9.0\ref\Backend.Infrastructure.dll
+D:\DANTE\IUA\05_QUINTO_CUATRIMESTRE\PROG DISP MOVILES(001756)\ProyectosC#\AO2_Dante-Patroni\Backend.Infrastructure\obj\Debug\net9.0\Backend.Infrastructure.sourcelink.json

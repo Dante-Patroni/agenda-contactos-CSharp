@@ -25,4 +25,12 @@ public class Contacto
     /// Dirección de correo electrónico del contacto.
     /// </summary>
     public string Email { get; set; } = string.Empty;
+
+    // Foreign Key
+    public int UserId { get; set; }
+
+    /// <summary>
+    /// Navigation Property
+    /// </summary>
+    public User User { get; set; } = null!;
 }

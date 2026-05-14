@@ -26,4 +26,5 @@ public class AppDbContext : DbContext
     /// y cumpla con las reglas de nulabilidad de C#.
     /// </remarks>
     public DbSet<Contacto> Contactos => Set<Contacto>();
+     public DbSet<User> Users => Set<User>();
 }

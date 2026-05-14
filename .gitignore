@@ -1,0 +1,40 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+
+# User files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# Entity Framework / SQLite
+*.db
+*.db-shm
+*.db-wal
+
+# Cache
+*.cache
+*.lscache
+
+# Publish
+publish/
+
+# NuGet
+*.nupkg
+
+# OS
+.DS_Store
+Thumbs.db

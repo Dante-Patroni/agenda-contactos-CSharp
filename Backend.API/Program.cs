@@ -42,9 +42,15 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     );
 });
 
-// Inyección de dependencias
+// --- Inyección de dependencias ---
+
+// Repositorios
 builder.Services.AddScoped<IContactoRepository, ContactoRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+// Servicios
 builder.Services.AddScoped<ContactoService>();
+builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<AuthService>();
 
 var app = builder.Build();
 

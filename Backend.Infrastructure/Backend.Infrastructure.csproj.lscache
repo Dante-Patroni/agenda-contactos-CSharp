@@ -59,12 +59,16 @@ Context/AppDbContext.cs
 Migrations/
  20260512001802_InitialCreate.cs
  20260512001802_InitialCreate.Designer.cs
+ 20260514163655_AddUserContactoRelation.cs
+ 20260514163655_AddUserContactoRelation.Designer.cs
  AppDbContextModelSnapshot.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
  Backend.Infrastructure.AssemblyInfo.cs
  Backend.Infrastructure.GlobalUsings.g.cs
-Repositories/ContactoRepository.cs
+Repositories/
+ ContactoRepository.cs
+ UserRepository.cs
 
 [metadataReferences]
 ../Backend.Domain/obj/Debug/net9.0/ref/Backend.Domain.dll

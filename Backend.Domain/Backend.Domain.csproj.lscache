@@ -55,8 +55,12 @@ TemporaryDependencyNodeTargetIdentifier=net9.0
 
 [sourceFiles]
 Class1.cs
-Entities/Contacto.cs
-Interfaces/IContactoRepository.cs
+Entities/
+ Contacto.cs
+ User.cs
+Interfaces/
+ IContactoRepository.cs
+ IUserRepository.cs
 obj/Debug/net9.0/
  .NETCoreApp,Version=v9.0.AssemblyAttributes.cs
  Backend.Domain.AssemblyInfo.cs

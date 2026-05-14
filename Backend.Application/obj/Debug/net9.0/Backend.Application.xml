@@ -4,6 +4,29 @@
         <name>Backend.Application</name>
     </assembly>
     <members>
+        <member name="T:Backend.Application.DTOs.AuthResponseDto">
+            <summary>
+            Objeto de Transferencia de Datos (DTO) que representa la respuesta de autenticación exitosa.
+            Contiene la credencial de acceso y los datos básicos del perfil del usuario para el cliente.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.AuthResponseDto.Token">
+            <summary>
+            Token de seguridad (generalmente JWT) utilizado para autorizar peticiones posteriores.
+            Debe ser incluido en el encabezado HTTP 'Authorization' bajo el esquema 'Bearer'.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.AuthResponseDto.Email">
+            <summary>
+            Dirección de correo electrónico del usuario autenticado.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.AuthResponseDto.Rol">
+            <summary>
+            Rol asignado al usuario en el sistema. 
+            Determina el nivel de acceso y permisos dentro de la aplicación.
+            </summary>
+        </member>
         <member name="T:Backend.Application.DTOs.ContactoResponseDto">
             <summary>
             Objeto de Transferencia de Datos (DTO) para la respuesta de contactos.
@@ -59,6 +82,46 @@
             Dirección de correo electrónico del contacto.
             </summary>
             <example>juan.perez@ejemplo.com</example>
+        </member>
+        <member name="T:Backend.Application.DTOs.LoginDto">
+            <summary>
+            Objeto de Transferencia de Datos (DTO) para la autenticación de usuarios.
+            Contiene las credenciales necesarias para validar la identidad de un usuario en el sistema.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.LoginDto.Email">
+            <summary>
+            Correo electrónico del usuario que intenta acceder.
+            Actúa como el nombre de usuario único en el sistema.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.LoginDto.Password">
+            <summary>
+            Contraseña en texto plano proporcionada durante el intento de inicio de sesión.
+            Será verificada contra el hash almacenado en la base de datos.
+            </summary>
+        </member>
+        <member name="T:Backend.Application.DTOs.RegisterDto">
+            <summary>
+            Objeto de Transferencia de Datos (DTO) para el registro de nuevos usuarios.
+            Define la estructura de información requerida que debe enviar el cliente.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.RegisterDto.Nombre">
+            <summary>
+            Nombre completo o alias del usuario que desea registrarse.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.RegisterDto.Email">
+            <summary>
+            Dirección de correo electrónico, utilizada como identificador único de acceso.
+            </summary>
+        </member>
+        <member name="P:Backend.Application.DTOs.RegisterDto.Password">
+            <summary>
+            Contraseña en texto plano enviada por el cliente. 
+            Esta será cifrada antes de persistirse en la base de datos.
+            </summary>
         </member>
         <member name="T:Backend.Application.Services.ContactoService">
             <summary>

@@ -85,6 +85,13 @@ dotnet run --project Backend.API
 ```
 *Por defecto, la API se levantará localmente. Comprueba los puertos mapeados en tu consola (generalmente `http://localhost:5148/`).*
 
+### 5. Creación de Usuario Inicial (Importante para probar la App)
+La base de datos se genera vacía y la aplicación móvil (Flutter) cuenta únicamente con pantalla de inicio de sesión (Login), no de registro. Por lo tanto, **es requisito crear un usuario desde la API primero**:
+1. Con la API corriendo, abre tu navegador en `http://localhost:5148/swagger` (o el puerto que te asigne la consola).
+2. Despliega el endpoint `POST /api/Auth/register`.
+3. Haz clic en **Try it out**, completa el cuerpo (body) con un Email y Password de prueba, y presiona **Execute**.
+4. ¡Listo! Utiliza esas mismas credenciales para iniciar sesión en la aplicación móvil de Flutter.
+
 ---
 
 ## 📡 Endpoints Principales
@@ -95,6 +102,7 @@ Con el proyecto en ejecución, puedes acceder a **Swagger** navegando a `http://
 - `POST /api/Auth/login`: Genera un token JWT tras la validación exitosa de credenciales de un usuario.
 
 **Contactos (Protegidos con Autorización JWT Bearer):**
+> 💡 **Nota sobre Swagger:** Al autorizar tus peticiones con el botón `Authorize` (candado verde), **solo debes pegar el token**. No es necesario escribir la palabra "Bearer " previamente, ya que Swagger la añade automáticamente.
 - `GET /api/Contactos`: Recupera el listado completo de los contactos pertenecientes al usuario autenticado.
 - `POST /api/Contactos`: Crea y persiste un nuevo contacto.
 - `PUT /api/Contactos/{id}`: Actualiza los campos de un contacto existente.

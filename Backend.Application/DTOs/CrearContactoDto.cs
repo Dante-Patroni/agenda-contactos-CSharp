@@ -24,4 +24,22 @@ public class CrearContactoDto
     /// </summary>
     /// <example>juan.perez@ejemplo.com</example>
     public string Email { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Obtiene o establece el apellido de la persona.
+    /// Se inicializa como una cadena vacía por defecto para mitigar riesgos de <see cref="NullReferenceException"/>.
+    /// </summary>
+    public string Apellido { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Obtiene o establece la dirección física o de residencia.
+    /// Se inicializa como una cadena vacía para asegurar la consistencia durante la serialización y el mapeo de datos.
+    /// </summary>
+    public string Direccion { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Obtiene o establece el género de la persona.
+    /// Se inicializa como una cadena vacía para evitar valores nulos en el transporte de datos o persistencia.
+    /// </summary>
+    public string Genero { get; set; } = string.Empty;
 }

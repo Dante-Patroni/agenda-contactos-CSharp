@@ -30,4 +30,19 @@ public class ContactoResponseDto
     /// </summary>
     /// <example>juan.perez@ejemplo.com</example>
     public string Email { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Apellido de la persona.
+    /// </summary>
+    public string Apellido { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Dirección física o de residencia.
+    /// </summary>
+    public string Direccion { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Género de la persona.
+    /// </summary>
+    public string Genero { get; set; } = string.Empty;
 }

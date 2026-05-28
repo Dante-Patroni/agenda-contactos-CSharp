@@ -84,6 +84,9 @@ public class ContactoRepository : IContactoRepository
         contactoExistente.Nombre = contacto.Nombre;
         contactoExistente.Telefono = contacto.Telefono;
         contactoExistente.Email = contacto.Email;
+        contactoExistente.Apellido = contacto.Apellido;
+        contactoExistente.Direccion = contacto.Direccion;
+        contactoExistente.Genero = contacto.Genero;
 
         await _context.SaveChangesAsync();
 

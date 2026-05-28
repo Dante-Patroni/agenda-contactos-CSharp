@@ -19,12 +19,16 @@ public class AppDbContext : DbContext
     }
 
     /// <summary>
-    /// Conjunto de datos (tabla) para la entidad <see cref="Contacto"/>.
-    /// </summary>
-    /// <remarks>
-    /// Se utiliza 'Set<Contacto>()' para asegurar que la propiedad no sea nula 
-    /// y cumpla con las reglas de nulabilidad de C#.
-    /// </remarks>
-    public DbSet<Contacto> Contactos => Set<Contacto>();
-     public DbSet<User> Users => Set<User>();
+/// Conjunto de datos (tabla) para la entidad <see cref="Contacto"/>.
+/// </summary>
+/// <remarks>
+/// Se utiliza 'Set&lt;Contacto&gt;()' para asegurar que la propiedad no sea nula 
+/// y cumpla con las reglas de nulabilidad de C#.
+/// </remarks>
+public DbSet<Contacto> Contactos => Set<Contacto>();
+
+/// <summary>
+/// Conjunto de datos (tabla) para la entidad <see cref="User"/>.
+/// </summary>
+public DbSet<User> Users => Set<User>();
 }

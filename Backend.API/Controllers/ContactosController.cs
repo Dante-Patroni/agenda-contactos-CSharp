@@ -1,17 +1,23 @@
 using Backend.Application.DTOs;
 using Backend.Application.Services;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.AspNetCore.Authorization;
 namespace Backend.API.Controllers;
 
+
+
 /// <summary>
-/// Controlador para la gestión de contactos.
-/// Proporciona endpoints para CRUD de contactos mediante la lógica definida en ContactoService.
+/// Controlador encargado de gestionar las operaciones de la agenda de contactos.
+/// Requiere autenticación obligatoria para todos sus endpoints mediante el atributo [Authorize].
+/// Expone las rutas bajo el patrón base 'api/contactos'.
 /// </summary>
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class ContactosController : ControllerBase
 {
+    // Los endpoints de este controlador heredan la restricción de seguridad [Authorize]
+
     private readonly ContactoService _contactoService;
 
     /// <summary>
@@ -58,9 +64,19 @@ public class ContactosController : ControllerBase
     /// <param name="dto">Datos del contacto a crear.</param>
     /// <returns>El contacto recién creado y la ubicación del recurso.</returns>
     [HttpPost]
-    public async Task<ActionResult<ContactoResponseDto>> Crear(CrearContactoDto dto)
+    public async Task<ActionResult<ContactoResponseDto>> Crear(
+    CrearContactoDto dto
+)
     {
-        var contactoCreado = await _contactoService.CrearAsync(dto);
+        var userIdClaim = User.FindFirst(
+            System.Security.Claims.ClaimTypes.NameIdentifier
+        )?.Value;
+
+        Console.WriteLine($"USER ID TOKEN: {userIdClaim}");
+
+        int userId = int.Parse(userIdClaim!);
+
+        var contactoCreado = await _contactoService.CrearAsync(dto, userId);
 
         return CreatedAtAction(
             nameof(ObtenerPorId),

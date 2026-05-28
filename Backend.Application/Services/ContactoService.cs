@@ -35,8 +35,11 @@ public class ContactoService
         {
             Id = contacto.Id,
             Nombre = contacto.Nombre,
+            Apellido = contacto.Apellido,
+            Direccion = contacto.Direccion,
             Telefono = contacto.Telefono,
-            Email = contacto.Email
+            Email = contacto.Email,
+            Genero = contacto.Genero
         }).ToList();
     }
 
@@ -63,24 +66,38 @@ public class ContactoService
             Id = contacto.Id,
             Nombre = contacto.Nombre,
             Telefono = contacto.Telefono,
-            Email = contacto.Email
+            Email = contacto.Email,
+            Apellido = contacto.Apellido,
+            Direccion = contacto.Direccion,
+            Genero = contacto.Genero
         };
     }
 
     /// <summary>
     /// Procesa la creación de un nuevo contacto.
-    /// Transforma el DTO de entrada en una entidad, la persiste y devuelve el DTO de respuesta.
     /// </summary>
     /// <param name="dto">DTO con los datos para crear el contacto.</param>
-    /// <returns>El nuevo contacto creado representado como <see cref="ContactoResponseDto"/>.</returns>
-    public async Task<ContactoResponseDto> CrearAsync(CrearContactoDto dto)
+    /// <param name="userId">
+    /// Identificador del usuario propietario del contacto.
+    /// </param>
+    /// <returns>
+    /// El nuevo contacto creado representado como ContactoResponseDto.
+    /// </returns>
+    public async Task<ContactoResponseDto> CrearAsync(
+    CrearContactoDto dto,
+    int userId
+)
     {
         // Mapeo de DTO de entrada a Entidad de dominio
         var contacto = new Contacto
         {
             Nombre = dto.Nombre,
             Telefono = dto.Telefono,
-            Email = dto.Email
+            Email = dto.Email,
+            Apellido = dto.Apellido,
+            Direccion = dto.Direccion,
+            Genero = dto.Genero,
+            UserId = userId
         };
 
         var contactoCreado = await _contactoRepository.CrearAsync(contacto);
@@ -91,7 +108,10 @@ public class ContactoService
             Id = contactoCreado.Id,
             Nombre = contactoCreado.Nombre,
             Telefono = contactoCreado.Telefono,
-            Email = contactoCreado.Email
+            Email = contactoCreado.Email,
+            Apellido = contactoCreado.Apellido,
+            Direccion = contactoCreado.Direccion,
+            Genero = contactoCreado.Genero
         };
     }
 
@@ -109,9 +129,13 @@ public class ContactoService
         // Transformación de los datos del DTO a la entidad de dominio
         var contacto = new Contacto
         {
+            Id = id,
             Nombre = dto.Nombre,
             Telefono = dto.Telefono,
-            Email = dto.Email
+            Email = dto.Email,
+            Apellido = dto.Apellido,
+            Direccion = dto.Direccion,
+            Genero = dto.Genero
         };
 
         var contactoEditado = await _contactoRepository.EditarAsync(id, contacto);
@@ -127,7 +151,10 @@ public class ContactoService
             Id = contactoEditado.Id,
             Nombre = contactoEditado.Nombre,
             Telefono = contactoEditado.Telefono,
-            Email = contactoEditado.Email
+            Email = contactoEditado.Email,
+            Apellido = contactoEditado.Apellido,
+            Direccion = contactoEditado.Direccion,
+            Genero = contactoEditado.Genero
         };
     }
 

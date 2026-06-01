@@ -10,6 +10,8 @@ using Backend.Application.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
+// --- Configuración de URL: Asegura  que escuche en todas las interfaces ---
+builder.WebHost.UseUrls("http://0.0.0.0:5148"); 
 
 // --- Registro de Servicios (Dependency Injection) ---
 
